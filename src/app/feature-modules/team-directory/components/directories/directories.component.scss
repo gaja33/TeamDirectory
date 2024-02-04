@@ -1,0 +1,59 @@
+mat-toolbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 9999;
+  background-color: #84a2f6 !important;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.input-group-text {
+  background-color: white;
+  border-color: white;
+  border-radius: 1.25rem;
+}
+
+.form-control {
+  border-color: white;
+  border-radius: 1.25rem;
+  font-family: "Poppins-Regular";
+}
+
+.main-container {
+  padding: 64px 50px 0px 50px;
+}
+
+mat-card {
+  margin-bottom: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+mat-card:hover {
+  transform: translate3D(0, -1px, 0) scale(1.1);
+  box-shadow: rgb(183 181 181 / 15%) 4.4px 4.4px 3.2px !important;
+}
+
+.section-header {
+  color: #878ba2;
+}
+
+.text-oneline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-title-color {
+  color: #414141;
+  font-family: "Poppins-Regular";
+}
+
+.card-subtitle-color {
+  color: #adadad;
+  font-family: "Poppins-Regular";
+}

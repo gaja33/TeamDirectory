@@ -1,0 +1,86 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="pl-4 font-poppins" style="font-size: 30px">Team</span>
+    <span class="example-spacer"></span>
+
+    <div class="input-group" style="width: 250px">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"
+          ><mat-icon>search</mat-icon></span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        [(ngModel)]="searchText"
+      />
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="main-container">
+  <section>
+    <h2 class="font-poppins" class="py-4 section-header">Administrators</h2>
+    <div class="row">
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-1"
+        *ngFor="let admin of administrators | appFilter : searchText"
+      >
+        <mat-card class="example-card" appRippleOnHover>
+          <mat-card-header>
+            <div
+              mat-card-avatar
+              class="example-header-image"
+              [style.background-image]="getUrlImage(admin.img)"
+              [ngStyle]="{
+                'background-size': 'cover'
+              }"
+            ></div>
+            <mat-card-title class="card-title-color text-oneline"
+              >{{ admin.first_name }} {{ admin.last_name }}</mat-card-title
+            >
+            <mat-card-subtitle class="card-subtitle-color text-oneline">{{
+              admin.email
+            }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <h2 class="font-poppins" class="py-4 section-header">Members</h2>
+    <div class="row">
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-1"
+        *ngFor="let member of members | appFilter : searchText"
+      >
+        <mat-card class="example-card" appRippleOnHover>
+          <mat-card-header>
+            <div
+              mat-card-avatar
+              class="example-header-image"
+              [style.background-image]="getUrlImage(member.img)"
+              [ngStyle]="{
+                'background-size': 'cover'
+              }"
+            ></div>
+            <mat-card-title class="card-title-color text-oneline"
+              >{{ member.first_name }} {{ member.last_name }}</mat-card-title
+            >
+            <mat-card-subtitle class="card-subtitle-color text-oneline">{{
+              member.email
+            }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+</div>
+<button
+  mat-fab
+  color="primary"
+  style="position: fixed; bottom: 30px; right: 30px; background-color: #84a2f6"
+>
+  <mat-icon>add</mat-icon>
+</button>
